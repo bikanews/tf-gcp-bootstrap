@@ -30,3 +30,4 @@ jobs:
         run: terraform apply -auto-approve
         env:
           GOOGLE_CLOUD_KEYFILE_JSON: ${{ secrets.GCP_CREDENTIALS }}
+          TF_VAR_credentials_file: ${{ secrets.GCP_CREDENTIALS }}

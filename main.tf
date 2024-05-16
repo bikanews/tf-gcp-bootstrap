@@ -1,7 +1,12 @@
 provider "google" {
-  credentials = file("$GCP_CREDENTIALS")
+  credentials = file(var.credentials_file)
   project     = "<starry-strand-395614>"
   region      = "us-central1"
+}
+
+variable "credentials_file" {
+  description = "Path to the Google Cloud credentials JSON file"
+  type        = string
 }
 
 resource "google_folder" "bootstrap_folder" {
